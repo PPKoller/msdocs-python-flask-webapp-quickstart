@@ -30,7 +30,7 @@ def favicon():
 
 @app.route("/hello", methods=["POST"])
 def hello():
-    name = float(sqrt(float(request.form.get("name"))))
+    name = request.form.get("name")
 
     if isinstance(name, float) :
         print("Request for hello page received with name=%s" % name)
