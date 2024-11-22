@@ -1,6 +1,3 @@
-import math
-
-
 def sreverse(x):
     """This is a fun function"""
 
