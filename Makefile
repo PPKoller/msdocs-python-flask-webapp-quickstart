@@ -9,4 +9,4 @@ format:
 	black *.py
 
 test:
-	python -m pytest -vv --cov=calc test_calc.py
+	python -m pytest -vv --cov=reverse test_reverse.py
