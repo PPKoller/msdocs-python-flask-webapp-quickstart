@@ -27,7 +27,21 @@ def favicon():
     )
 
 
-@app.route("/hello", methods=["POST"])
+@app.route("/calc", methods=["POST"])
+def calc():
+    number = request.form.get("number")
+
+    if number:
+        print("Request for calc page received with number=%s" % number)
+        return render_template("calc.html", number=number)
+    else:
+        print(
+            "Request for calc page received with no number or blank number -- redirecting"
+        )
+        return redirect(url_for("index"))
+
+
+@app.route("/calc", methods=["POST"])
 def hello():
     name = request.form.get("name")
 
