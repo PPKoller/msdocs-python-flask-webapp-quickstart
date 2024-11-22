@@ -31,11 +31,12 @@ def favicon():
 
 @app.route("/hello", methods=["POST"])
 def hello():
-    name = sreverse(request.form.get("name"))
+    name = request.form.get("name")
+    rname = sreverse(name)
 
-    if name:
+    if rname:
         print("Request for hello page received with name=%s" % name)
-        return render_template("hello.html", name=name)
+        return render_template("hello.html", name=name, rname=rname)
     else:
         print(
             "Request for hello page received with no name or blank name -- redirecting"
