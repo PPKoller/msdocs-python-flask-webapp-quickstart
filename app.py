@@ -32,7 +32,7 @@ def favicon():
 def hello():
     name = str(sqrt(float(request.form.get("name"))))
 
-    if isinstance(name, float) :
+    if name :
         print("Request for hello page received with name=%s" % name)
         return render_template("hello.html", name=name)
     else:
