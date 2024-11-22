@@ -1,5 +1,6 @@
 import os
 
+from calc import sqrt
 from flask import (
     Flask,
     redirect,
@@ -28,7 +29,7 @@ def favicon():
 
 @app.route("/hello", methods=["POST"])
 def hello():
-    name = request.form.get("name")
+    name = str(sqrt(float(request.form.get("name"))))
 
     if name:
         print("Request for hello page received with name=%s" % name)
