@@ -28,16 +28,16 @@ def favicon():
         mimetype="image/vnd.microsoft.icon",
     )
 
-@app.route("/calc", methods=["POST"])
-def calc():
+@app.route("/result", methods=["POST"])
+def result():
     name = str(sqrt(float(request.form.get("name"))))
 
     if name :
-        print("Request for calc page received with name=%s" % name)
-        return render_template("calc.html", name=name)
+        print("Request for result page received with name=%s" % name)
+        return render_template("result.html", name=name)
     else:
         print(
-            "Request for calc page received with no name or blank name -- redirecting"
+            "Request for result page received with no name or blank name -- redirecting"
         )
         return redirect(url_for("index"))
 
