@@ -28,16 +28,16 @@ def favicon():
         mimetype="image/vnd.microsoft.icon",
     )
 
-@app.route("/result", methods=["POST"])
-def result():
+@app.route("/hello", methods=["POST"])
+def hello():
     name = str(sqrt(float(request.form.get("name"))))
 
     if name :
-        print("Request for result page received with name=%s" % name)
-        return render_template("result.html", name=name)
+        print("Request for hello page received with name=%s" % name)
+        return render_template("hello.html", name=name)
     else:
         print(
-            "Request for result page received with no name or blank name -- redirecting"
+            "Request for hello page received with no name or blank name -- redirecting"
         )
         return redirect(url_for("index"))
 
