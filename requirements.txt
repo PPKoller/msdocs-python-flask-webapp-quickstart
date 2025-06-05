@@ -2,4 +2,4 @@ black
 pytest
 pylint
 pytest-cov
-Flask==2.2.2
+Flask==3.1.0
